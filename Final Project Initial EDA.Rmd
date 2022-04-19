@@ -14,3 +14,4 @@ https://www.kaggle.com/datasets/sootersaalu/amazon-top-50-bestselling-books-2009
  Books <- read.csv(file.choose("bestsellers with categories.csv"))
 ```
 
+Books Dataset EDA - This was made to show the bestselling books from different years and some facts about them.The variables are things about the books. If you sort by rating, the book "The casual vacany" may be said to be an outlier as it is .3 behind the next worst reviewed book. We have to make sure that the reviews, rating, year, and price are all in numeric variables.
