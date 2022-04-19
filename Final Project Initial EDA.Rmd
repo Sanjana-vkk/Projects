@@ -5,5 +5,12 @@ author: "Andrew Harris, Sanjana Kuchipudi, Saumyaa SinhaSaumyaa Sinha "
 date: 4/19/22
 ---
 
-- **Guiding Question (i.e., Research Question)**: Make a clear statement of a **single** guiding/research question that will drive your analysis. It should be phrased as a question that you will try to investigate (i.e., it should have a question mark) 
+Dataset of Books
+
+To get this first dataset, download the file from this link, then run the code.
+https://www.kaggle.com/datasets/sootersaalu/amazon-top-50-bestselling-books-2009-2019
+
+```{r}
+ Books <- read.csv(file.choose("bestsellers with categories.csv"))
+```
 
