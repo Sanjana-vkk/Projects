@@ -5,3 +5,5 @@ author: "Andrew Harris, Sanjana Kuchipudi, Saumyaa SinhaSaumyaa Sinha "
 date: 4/19/22
 ---
 
+- **Guiding Question (i.e., Research Question)**: Make a clear statement of a **single** guiding/research question that will drive your analysis. It should be phrased as a question that you will try to investigate (i.e., it should have a question mark) 
+
