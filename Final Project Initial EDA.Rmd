@@ -9,9 +9,12 @@ Dataset of Books
 
 To get this first dataset, download the file from this link, then run the code.
 https://www.kaggle.com/datasets/sootersaalu/amazon-top-50-bestselling-books-2009-2019
+To get the next dataset, download csv from Kaggle.
+https://www.kaggle.com/datasets/jealousleopard/goodreadsbooks
 
 ```{r}
  Books <- read.csv(file.choose("bestsellers with categories.csv"))
+ Goodreads <- read.csv(file.choose("Goodreads.csv"))
 ```
 
 Books Dataset EDA - This was made to show the bestselling books from different years and some facts about them.The variables are things about the books. If you sort by rating, the book "The casual vacany" may be said to be an outlier as it is .3 behind the next worst reviewed book. We have to make sure that the reviews, rating, year, and price are all in numeric variables.
