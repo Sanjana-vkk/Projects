@@ -21,3 +21,5 @@ What is the variation between the average rating of a book on Amazon vs Goodread
 ```
 
 Books Dataset EDA - This was made to show the bestselling books from different years and some facts about them.The variables are things about the books. If you sort by rating, the book "The casual vacany" may be said to be an outlier as it is .3 behind the next worst reviewed book. We have to make sure that the reviews, rating, year, and price are all in numeric variables.
+
+Goodreads Dataset EDA - This dataset also has books, this time with more cases and variables. A case is a book, and then the variables are things about the book. Some cleaning may have to be done with this set to get rid of blanks that could mess things up. 
