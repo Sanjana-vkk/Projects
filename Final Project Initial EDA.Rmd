@@ -12,6 +12,9 @@ https://www.kaggle.com/datasets/sootersaalu/amazon-top-50-bestselling-books-2009
 To get the next dataset, download csv from Kaggle.
 https://www.kaggle.com/datasets/jealousleopard/goodreadsbooks
 
+Research Question: 
+What is the variation between the average rating of a book on Amazon vs Goodreads (books are the ones that appear on both sets)?
+
 ```{r}
  Books <- read.csv(file.choose("bestsellers with categories.csv"))
  Goodreads <- read.csv(file.choose("Goodreads.csv"))
