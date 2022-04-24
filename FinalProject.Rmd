@@ -6,6 +6,7 @@ output: html_notebook
 ---
 
 https://www.kaggle.com/code/paultimothymooney/2020-usa-election-vote-percentages-by-state/data?select=democratic_vs_republican_votes_by_usa_state_2020.csv
+https://www.kaggle.com/datasets/benhamner/2016-us-election?select=county_facts.csv
 
 
 ```{r}
