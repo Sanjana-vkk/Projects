@@ -1,6 +1,6 @@
 ---
 title: "Final Project Report"
-author: "AUTHOR NAME(S)"
+author: Saumyaa Sinha, Andrew Harris, Sanjana Kuchipudi
 date: "Due: DATE"
 output: html_notebook
 ---
