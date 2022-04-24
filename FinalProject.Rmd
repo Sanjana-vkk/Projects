@@ -8,6 +8,12 @@ output: html_notebook
 https://www.kaggle.com/code/paultimothymooney/2020-usa-election-vote-percentages-by-state/data?select=democratic_vs_republican_votes_by_usa_state_2020.csv
 https://www.kaggle.com/datasets/benhamner/2016-us-election?select=county_facts.csv
 
+Wrangling:
+See how percent of population (age) affects voting patterns
+Average out population percents in the demographic table (county averaged to represent state)
+Drop a column in the voting table (state code)
+join table for better comparison
+User defined function if statements check in percent
 
 ```{r}
 demographics <- read.csv(file.choose("demographics.csv"))
