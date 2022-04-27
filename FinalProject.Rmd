@@ -19,4 +19,15 @@ User defined function if statements check in percent
 demographics <- read.csv(file.choose("demographics.csv"))
 voting <- read.csv(file.choose("voting.csv"))
 
+
+
+library(dplyr)
+library(tidyverse)
+
+demographics %>%
+  filter(!grepl(".", state_abbreviation, ignore.case = TRUE))
 ```
+
+
+
+  
