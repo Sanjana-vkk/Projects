@@ -7,6 +7,7 @@ output: html_notebook
 
 https://www.kaggle.com/code/paultimothymooney/2020-usa-election-vote-percentages-by-state/data?select=democratic_vs_republican_votes_by_usa_state_2020.csv
 https://www.kaggle.com/datasets/benhamner/2016-us-election?select=county_facts.csv
+https://www.kff.org/other/state-indicator/distribution-by-age/?currentTimeframe=0&sortModel=%7B%22colId%22:%22Location%22,%22sort%22:%22asc%22%7D
 
 Wrangling:
 See how percent of population (age) affects voting patterns
