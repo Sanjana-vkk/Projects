@@ -26,6 +26,8 @@ library(tidyverse)
 
 demographics %>%
   filter(!grepl(".", state_abbreviation, ignore.case = TRUE))
+  newDem <- select(demographics, c('area_name','PST045214','PST120214','AGE135214','AGE295214','AGE775214'))
+  
 ```
 
 
