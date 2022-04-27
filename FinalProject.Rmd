@@ -28,6 +28,13 @@ library(tidyverse)
 newDem <-demographics %>%
   filter(!grepl(".", state_abbreviation, ignore.case = TRUE))
 updated <-select(newDem, c('area_name','PST045214','PST120214','AGE135214','AGE295214','AGE775214'))
+
+
+finalTable <-
+  updated %>%
+   left_join(voting, by = c("area_name" ="state"))
+  
+
 ```
 
 
