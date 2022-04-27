@@ -24,10 +24,10 @@ voting <- read.csv(file.choose("voting.csv"))
 library(dplyr)
 library(tidyverse)
 
-demographics %>%
+
+newDem <-demographics %>%
   filter(!grepl(".", state_abbreviation, ignore.case = TRUE))
-  newDem <- select(demographics, c('area_name','PST045214','PST120214','AGE135214','AGE295214','AGE775214'))
-  
+updated <-select(newDem, c('area_name','PST045214','PST120214','AGE135214','AGE295214','AGE775214'))
 ```
 
 
