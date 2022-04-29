@@ -24,7 +24,7 @@ voting <- read.csv(file.choose("voting.csv"))
 
 library(dplyr)
 library(tidyverse)
-
+library(ggplot2)
 
 newDem <-demographics %>%
   filter(!grepl(".", state_abbreviation, ignore.case = TRUE))
