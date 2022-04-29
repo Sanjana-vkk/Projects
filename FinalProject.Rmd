@@ -34,7 +34,12 @@ updated <-select(newDem, c('area_name','PST045214','PST120214','AGE135214','AGE2
 finalTable <-
   updated %>%
    left_join(voting, by = c("area_name" ="state"))
-  
+
+FinalTable2 <-
+  FindalTable1 %>%
+  left_join(raw_data, by = c("location" = "area_name"))
+
+
 
 ```
 
