@@ -32,7 +32,7 @@ newDem <-demographics %>%
   filter(!grepl(".", state_abbreviation, ignore.case = TRUE))
 updated <-select(newDem, c('area_name','PST045214','PST120214','AGE135214','AGE295214','AGE775214'))
 
-
+ 
 finalTable <-
   updated %>%
    left_join(voting, by = c("area_name" ="state"))
@@ -43,6 +43,21 @@ FinalTable2 <-
 
 
 
+
+### attempt at doing mulitple bars per state 
+finalGraph <-
+  finalTable2 %>%
+   ggplot(aes(x = usa_state, y = percent_democrat,fill = "" )) +
+         geom_col() + 
+         scale_fill_manual(breaks = c("Adults.19.25", "adults.26.34", "Adults.35.54", "Adults.55.64" ))
+
+
+
+  finalTable2 %>%
+    ggplot(aes(x = usa_state, y= percent_democrat, fill = usa_state)) +
+    geom_bar(stat = "identity")  +
+    geom_col(width = 3) +
+    labs (x = "")
 ```
 
 
