@@ -1,13 +1,24 @@
 ---
 title: "Final Project Report"
 author: Saumyaa Sinha, Andrew Harris, Sanjana Kuchipudi
-date: "Due: DATE"
+date: "Due: 05/04/"
 output: html_notebook
 ---
 
+links to the data sets below: 
 https://www.kaggle.com/code/paultimothymooney/2020-usa-election-vote-percentages-by-state/data?select=democratic_vs_republican_votes_by_usa_state_2020.csv
+Shown above is the data set for the democratic vs republican votes data by the US state in 2020. This data is very useful to see the voting percentages in the 2020 presidential election. The variables include the US state and the number of republicans and democrats for each state. Includes additional columns for the US state and the US state code. The last variable is the percent democrat for each of the 50 US states. 
+
 https://www.kaggle.com/datasets/benhamner/2016-us-election?select=county_facts.csv
+The 2016 US election data shows the county demographics data for US counties from the US census. This data set has 54 total variables including the fips code, the area name, state abbreviation, population estimates for several years such as 2010 and 2014. It also included the population percent for several age ranges. 
+
 https://www.kff.org/other/state-indicator/distribution-by-age/?currentTimeframe=0&sortModel=%7B%22colId%22:%22Location%22,%22sort%22:%22asc%22%7D
+This data set shows the population distributions by age in the US states. It includes the percentages for  six age ranges for all 50 states. This data is based on the Census Bureau’s American Community Survey (ACS). 
+
+
+
+Research question: 
+How does the age in percent of population affect the voting patterns in the US?
 
 Wrangling:
 See how percent of population (age) affects voting patterns
@@ -20,31 +31,58 @@ User defined function if statements check in percent
 demographics <- read.csv(file.choose("demographics.csv"))
 voting <- read.csv(file.choose("voting.csv"))
 
+```
+
+```{r}
+glimpse(demographics)
+```
 
 
+
+```{r}
+glimpse(voting)
+```
+
+```{r}
+head(voting)
+```
+
+
+```{r}
 library(dplyr)
 library(tidyverse)
 library(ggplot2)
 install.packages("usmap")
 library(usmap)
+```
 
+```{r}
 newDem <-demographics %>%
   filter(!grepl(".", state_abbreviation, ignore.case = TRUE))
 updated <-select(newDem, c('area_name','PST045214','PST120214','AGE135214','AGE295214','AGE775214'))
+newDem
+```
 
- 
+
+```{r}
 finalTable <-
   updated %>%
    left_join(voting, by = c("area_name" ="state"))
+finalTable
+``` 
 
+```{r}
 FinalTable2 <-
   FinalTable1 %>%
   left_join(raw_data, by = c( "area_name" = "location"))
+FinalTable2
+```
 
 
 
 
 ### attempt at doing mulitple bars per state 
+```{r}
 finalGraph <-
   finalTable2 %>%
    ggplot(aes(x = usa_state, y = percent_democrat,fill = "" )) +
