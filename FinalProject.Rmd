@@ -1,7 +1,7 @@
 ---
 title: "Final Project Report"
 author: Saumyaa Sinha, Andrew Harris, Sanjana Kuchipudi
-date: "Due: 05/04/"
+date: "Due: 05/04/2022"
 output: html_notebook
 ---
 
@@ -16,7 +16,6 @@ https://www.kff.org/other/state-indicator/distribution-by-age/?currentTimeframe=
 This data set shows the population distributions by age in the US states. It includes the percentages for  six age ranges for all 50 states. This data is based on the Census Bureau’s American Community Survey (ACS). 
 
 
-
 Research question: 
 How does the age in percent of population affect the voting patterns in the US?
 
@@ -27,11 +26,26 @@ Drop a column in the voting table (state code)
 join table for better comparison
 User defined function if statements check in percent
 
+
 ```{r}
 demographics <- read.csv(file.choose("demographics.csv"))
 voting <- read.csv(file.choose("voting.csv"))
-
 ```
+
+```{r}
+raw_data <- read.csv(file.choose("raw_data.csv"))
+```
+
+
+
+```{r}
+library(dplyr)
+library(tidyverse)
+library(ggplot2)
+install.packages("usmap")
+library(usmap)
+```
+
 
 ```{r}
 glimpse(demographics)
@@ -49,19 +63,12 @@ head(voting)
 
 
 ```{r}
-library(dplyr)
-library(tidyverse)
-library(ggplot2)
-install.packages("usmap")
-library(usmap)
-```
-
-```{r}
 newDem <-demographics %>%
   filter(!grepl(".", state_abbreviation, ignore.case = TRUE))
 updated <-select(newDem, c('area_name','PST045214','PST120214','AGE135214','AGE295214','AGE775214'))
 newDem
 ```
+
 
 
 ```{r}
@@ -97,7 +104,6 @@ finalGraph <-
     geom_col(width = 3) +
     labs (x = "")
 ```
-
 
 
   
