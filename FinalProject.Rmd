@@ -104,7 +104,7 @@ Plot of U.S with percent of democrats for each state. Darker blue is less democr
 ```{r}
   FinalTable2 %>%
     ggplot(aes(x = Adults.19.25, y= percent_democrat, color = usa_state)) +
-    geom_point(stat = "identity") +
+    geom_point(stat = "identity")  +ggtitle("Democrats in ages 19 to 25") +
     labs (x = "") 
 ```
 
@@ -112,13 +112,13 @@ Plot of U.S with percent of democrats for each state. Darker blue is less democr
 ```{r}
  FinalTable2 %>%
     ggplot(aes(x = Adults.26.34, y= percent_democrat, color = usa_state)) +
-    geom_point(stat = "identity") +
+    geom_point(stat = "identity") + ggtitle("Democrats in ages 26 to 34") +
     labs (x = "") 
 ```
 ```{r}
 FinalTable2 %>%
     ggplot(aes(x = Adults.35.54, y= percent_democrat, color = usa_state)) +
-    geom_point(stat = "identity") +
+    geom_point(stat = "identity") + ggtitle("Democrats in ages 35 to 54") +
     labs (x = "")
 ```
 
@@ -126,18 +126,18 @@ FinalTable2 %>%
 ```{r}
 FinalTable2 %>%
     ggplot(aes(x = Adults.55.64, y= percent_democrat, color = usa_state)) +
-    geom_point(stat = "identity") +
+    geom_point(stat = "identity") + ggtitle("Democrats in ages 55 to 64") +
     labs (x = "") 
 ```
 
 ```{r}
 FinalTable2 %>%
     ggplot(aes(x = X65., y= percent_democrat, color = usa_state)) +
-    geom_point(stat = "identity") +
+    geom_point(stat = "identity") + ggtitle("Democrats in ages over 65") +
     labs (x = "") 
 ```
 
-From these graphs of different ages we saw that there was a fairly even spread out which shows us that for the U.S as a whole, this age range doesnt lean towards high or low amount of democrats. 
+From these graphs of different ages we saw that there was a fairly even spread out which shows us that for the U.S as a whole, this age range doesn't lean towards high or low amount of democrats. 
 
 
 
