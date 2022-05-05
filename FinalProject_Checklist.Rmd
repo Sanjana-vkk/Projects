@@ -46,7 +46,7 @@ output: html_notebook
 
 73
 (E) .Rmd Line number(s) for use of reduction and/or transformation functions: 
-
+ 94 ncol()
 
 (F) .Rmd Line number(s) for use of user-defined functions: 
 
