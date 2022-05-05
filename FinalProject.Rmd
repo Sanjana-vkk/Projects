@@ -5,6 +5,9 @@ date: "Due: 05/04/2022"
 output: html_notebook
 ---
 
+The three datasets are available in the repo
+
+
 links to the data sets below: 
 https://www.kaggle.com/code/paultimothymooney/2020-usa-election-vote-percentages-by-state/data?select=democratic_vs_republican_votes_by_usa_state_2020.csv
 Shown above is the data set for the democratic vs republican votes data by the US state in 2020. This data is very useful to see the voting percentages in the 2020 presidential election. The variables include the US state and the number of republicans and democrats for each state. Includes additional columns for the US state and the US state code. The last variable is the percent democrat for each of the 50 US states. 
@@ -30,6 +33,10 @@ This data set shows the population distributions by age in the US states. It inc
 
 Research question: 
 How does the age in percent of population affect the voting patterns in the US?
+
+
+Explains why the topic is important: 
+Voter turnout is low in the United states when compared with other similar countries around the world. We want to investigate this turnout, specifically when looking at different age groups, to see if it provides any insight into why our turnout is so low. When looking at different age groups, we can see if efforts being done to improve the voting of those groups are effective. With this being done, it could give some ideas into our problems and help those trying to solve them. 
 
 Wrangling:
 See how percent of population (age) affects voting patterns
