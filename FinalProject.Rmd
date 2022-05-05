@@ -91,8 +91,9 @@ FinalTable2 <-
   finalTable %>%
   left_join(raw_data, by = c( "area_name" = "Location"))
 FinalTable2
+ncol(FinalTable2)
 ```
-Another join, last one
+Another join, last one + checking if all the variables show up
 
 ```{r}
 plot_usmap(data = voting, values = "percent_democrat", color = "black") + 
