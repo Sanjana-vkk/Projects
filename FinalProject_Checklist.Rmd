@@ -1,6 +1,6 @@
 ---
 title: 'Final Project Checklist'
-author: Andrew Harris, Sanjana Kuchipudi, Saumyaa Sinha
+author: Andrew Harris,  Sanjana Kuchipudi, Saumyaa Sinha
 date: 5/4/2022
 output: html_notebook
 ---
