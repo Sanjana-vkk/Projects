@@ -5,6 +5,9 @@ date: "Due: 05/04/2022"
 output: html_notebook
 ---
 
+The three datasets are available in the repo
+
+
 links to the data sets below: 
 https://www.kaggle.com/code/paultimothymooney/2020-usa-election-vote-percentages-by-state/data?select=democratic_vs_republican_votes_by_usa_state_2020.csv
 Shown above is the data set for the democratic vs republican votes data by the US state in 2020. This data is very useful to see the voting percentages in the 2020 presidential election. The variables include the US state and the number of republicans and democrats for each state. Includes additional columns for the US state and the US state code. The last variable is the percent democrat for each of the 50 US states. 
