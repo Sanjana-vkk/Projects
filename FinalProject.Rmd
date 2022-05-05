@@ -5,7 +5,7 @@ date: "Due: 05/04/2022"
 output: html_notebook
 ---
 
-The three data sets are available in the repo
+Note: The csv files are in the github repo, we had to make minor changes to the raw_data.csv file.
 
 
 links to the data sets below: 
@@ -19,18 +19,6 @@ https://www.kff.org/other/state-indicator/distribution-by-age/?currentTimeframe=
 This data set shows the population distributions by age in the US states. It includes the percentages for  six age ranges for all 50 states. This data is based on the Census Bureau’s American Community Survey (ACS). 
 
 
-
-(A) *All data visualizations* must be relevant to the stated research question, and the report must include at least one effective display of many--at least 3--variables (excluding maps or decision trees)
-
-(B) *Code quality:* Code formatting is consistent with Style Guide Appendix of DataComputing eBook. Specifically, all code chunks demonstrate proficiency with (1) meaningful object names (2) proper use of white spaces and new lines (3) use of meaningful comments.
-
-(C) *Narrative quality:* The narrative text--sentences and paragraphs--(1) clearly states one guiding question or research question for your investigation (2) explains why this topic is important and/or interesting to investigate (3) explains one or more significant findings or conclusions of your investigation that is clearly related to the guiding/research question
-
-(D) *Overall Quality:* (1) Submitted project shows significant effort to produce a high-quality and thoughtful analysis that contains interpretation of plots and other output  (2) The analysis is well-organized and easy to follow, and (3) Free of extraneous content - examples: do NOT output full data frames of >20 rows, any unrelated graphs, or other content with unclear purpose
-
-(E) *GitHub Repo:* (1) (1) At least 3 commits pushed to provided GitHub repo PER person (2) All commits must have an informative commit message that summarizes the contribution (3) Final project is entirely contained in the provided repo, including data sources, documents, and anything else that another analyst would need to reproduce your entire analysis (e.g. do NOT make any references to your personal desktop like C:\Users\Omar\STAT184)
-
-
 Research question: 
 How does the age in percent of population affect the voting patterns in the US?
 
@@ -38,24 +26,19 @@ How does the age in percent of population affect the voting patterns in the US?
 Explains why the topic is important: 
 Voter turnout is low in the United states when compared with other similar countries around the world. We want to investigate this turnout, specifically when looking at different age groups, to see if it provides any insight into why our turnout is so low. When looking at different age groups, we can see if efforts being done to improve the voting of those groups are effective. With this being done, it could give some ideas into our problems and help those trying to solve them. 
 
-Wrangling:
-See how percent of population (age) affects voting patterns
-Average out population percents in the demographic table (county averaged to represent state)
-Drop a column in the voting table (state code)
-join table for better comparison
-User defined function if statements check in percent
-
 
 ```{r}
-demographics <- read.csv(file.choose("demographics.csv"))
-voting <- read.csv(file.choose("voting.csv"))
+demographics <- read.csv(file.choose("county_facts.csv"))
+voting <- read.csv(file.choose("democratic_vs_republican_votes_by_usa_state_2020.csv"))
 ```
 
 ```{r}
 raw_data <- read.csv(file.choose("raw_data.csv"))
-raw_data
 ```
 
+```{r}
+raw_data
+```
 
 
 ```{r}
@@ -68,7 +51,7 @@ library(usmap)
 
 
 ```{r}
-glimpse(demographics)
+head(demographics)
 ```
 
 
@@ -79,6 +62,9 @@ glimpse(voting)
 
 ```{r}
 head(voting)
+```
+```{r}
+head(raw_data)
 ```
 
 
@@ -104,42 +90,40 @@ FinalTable2 <-
   left_join(raw_data, by = c( "area_name" = "Location"))
 FinalTable2
 ```
-
-
-
-
-
 ```{r}
-  FinalTable2 %>%
-    ggplot(aes(x = usa_state, y= percent_democrat, fill = usa_state)) +
-    geom_bar(stat = "identity")  +
-    geom_col(width = 3) +
-    labs (x = "") 
+plot_usmap(data = voting, values = "percent_democrat", color = "black") + 
+  scale_fill_continuous(name = "Percent of Democrats", label = scales::comma) + 
+  theme(legend.position = "right")
 ```
 
-```{r}
- FinalTable2 %>%
-    ggplot(aes(x = usa_state, y= percent_democrat)) +
-    geom_bar(stat = "identity")  +
-    geom_col(width = 3) +
-    labs (x = "") + coord_cartesian(xlim = c(0, 60), ylim = c(0, 75))
-```
+
 ```{r}
   FinalTable2 %>%
     ggplot(aes(x = Adults.19.25, y= percent_democrat, color = usa_state)) +
     geom_point(stat = "identity") +
     labs (x = "") 
 ```
+
+```{r}
+ FinalTable2 %>%
+    ggplot(aes(x = Adults.26.34, y= percent_democrat, color = usa_state)) +
+    geom_point(stat = "identity") +
+    labs (x = "") 
+```
 ```{r}
 FinalTable2 %>%
-    ggplot(aes(x = X65., y= percent_democrat, color = usa_state)) +
+    ggplot(aes(x = Adults.55.64, y= percent_democrat, color = usa_state)) +
+    geom_point(stat = "identity") +
+    labs (x = "") 
+```
+```{r}
+FinalTable2 %>%
+    ggplot(aes(x = Adults.55.64, y= percent_democrat, color = usa_state)) +
     geom_point(stat = "identity") +
     labs (x = "") 
 ```
 
-```{r}
-plot_usmap(data = FinalTable2, values = "percent_democrat", color = "black") + 
-  scale_fill_continuous(name = "Percent of Democrats", label = scales::comma) + 
-  theme(legend.position = "right")
-```
+
+
+
 
