@@ -1,7 +1,7 @@
 ---
 title: 'Final Project Checklist'
-author: "AUTHOR NAME(S)"
-date: "Due: DATE"
+author: Andrew Harris, Sanjana Kuchipudi, Saumyaa Sinha
+date: 5/4/2022
 output: html_notebook
 ---
 
