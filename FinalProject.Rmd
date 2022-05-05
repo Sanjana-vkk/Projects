@@ -34,6 +34,7 @@ voting <- read.csv(file.choose("voting.csv"))
 
 ```{r}
 raw_data <- read.csv(file.choose("raw_data.csv"))
+raw_data
 ```
 
 
@@ -80,8 +81,8 @@ finalTable
 
 ```{r}
 FinalTable2 <-
-  FinalTable1 %>%
-  left_join(raw_data, by = c( "area_name" = "location"))
+  finalTable %>%
+  left_join(raw_data, by = c( "area_name" = "Location"))
 FinalTable2
 ```
 
@@ -91,19 +92,50 @@ FinalTable2
 ### attempt at doing mulitple bars per state 
 ```{r}
 finalGraph <-
-  finalTable2 %>%
+  FinalTable2 %>%
    ggplot(aes(x = usa_state, y = percent_democrat,fill = "" )) +
          geom_col() + 
          scale_fill_manual(breaks = c("Adults.19.25", "adults.26.34", "Adults.35.54", "Adults.55.64" ))
 
+```
 
-
-  finalTable2 %>%
-    ggplot(aes(x = usa_state, y= percent_democrat, fill = usa_state)) +
-    geom_bar(stat = "identity")  +
-    geom_col(width = 3) +
-    labs (x = "")
+```{r}
+finalGraph
 ```
 
 
-  
+```{r}
+  FinalTable2 %>%
+    ggplot(aes(x = usa_state, y= percent_democrat, fill = usa_state)) +
+    geom_bar(stat = "identity")  +
+    geom_col(width = 3) +
+    labs (x = "") 
+```
+
+```{r}
+ FinalTable2 %>%
+    ggplot(aes(x = usa_state, y= percent_democrat)) +
+    geom_bar(stat = "identity")  +
+    geom_col(width = 3) +
+    labs (x = "") + coord_cartesian(xlim = c(0, 60), ylim = c(0, 75))
+```
+```{r}
+  FinalTable2 %>%
+    ggplot(aes(x = Adults.19.25, y= percent_democrat, color = usa_state)) +
+    geom_point(stat = "identity") +
+    labs (x = "") 
+```
+```{r}
+FinalTable2 %>%
+    ggplot(aes(x = X65., y= percent_democrat, color = usa_state)) +
+    geom_point(stat = "identity") +
+    labs (x = "") 
+```
+
+```{r}
+plot_usmap(data = FinalTable2, values = "percent_democrat", color = "red") + 
+  scale_fill_continuous(name = "Percent of Democrats", label = scales::comma) + 
+  theme(legend.position = "right")
+
+```
+
