@@ -107,7 +107,7 @@ Plot of U.S with percent of democrats for each state. Darker blue is less democr
     geom_point(stat = "identity")  +ggtitle("Democrats in ages 19 to 25") +
     labs (x = "") 
 ```
-
+We thought this one would be more democratic than it was, which suprised us. We were expecting a trend to exist with the younger population to be either more democratic or less, but it was evenly spread for this age group.
 
 ```{r}
  FinalTable2 %>%
@@ -115,6 +115,8 @@ Plot of U.S with percent of democrats for each state. Darker blue is less democr
     geom_point(stat = "identity") + ggtitle("Democrats in ages 26 to 34") +
     labs (x = "") 
 ```
+
+
 ```{r}
 FinalTable2 %>%
     ggplot(aes(x = Adults.35.54, y= percent_democrat, color = usa_state)) +
@@ -130,12 +132,15 @@ FinalTable2 %>%
     labs (x = "") 
 ```
 
+
 ```{r}
 FinalTable2 %>%
     ggplot(aes(x = X65., y= percent_democrat, color = usa_state)) +
     geom_point(stat = "identity") + ggtitle("Democrats in ages over 65") +
     labs (x = "") 
 ```
+These other graphs also follow the same trend as the first one of the ages having little effect on the political affiliation of the populations.
+
 
 From these graphs of different ages we saw that there was a fairly even spread out which shows us that for the U.S as a whole, this age range doesn't lean towards high or low amount of democrats. 
 
