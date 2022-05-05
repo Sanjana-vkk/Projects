@@ -115,6 +115,12 @@ Plot of U.S with percent of democrats for each state. Darker blue is less democr
     geom_point(stat = "identity") +
     labs (x = "") 
 ```
+```{r}
+FinalTable2 %>%
+    ggplot(aes(x = Adults.35.54, y= percent_democrat, color = usa_state)) +
+    geom_point(stat = "identity") +
+    labs (x = "")
+```
 
 
 ```{r}
@@ -126,7 +132,7 @@ FinalTable2 %>%
 
 ```{r}
 FinalTable2 %>%
-    ggplot(aes(x = Adults.55.64, y= percent_democrat, color = usa_state)) +
+    ggplot(aes(x = X65., y= percent_democrat, color = usa_state)) +
     geom_point(stat = "identity") +
     labs (x = "") 
 ```
