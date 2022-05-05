@@ -16,6 +16,18 @@ https://www.kff.org/other/state-indicator/distribution-by-age/?currentTimeframe=
 This data set shows the population distributions by age in the US states. It includes the percentages for  six age ranges for all 50 states. This data is based on the Census Bureau’s American Community Survey (ACS). 
 
 
+
+(A) *All data visualizations* must be relevant to the stated research question, and the report must include at least one effective display of many--at least 3--variables (excluding maps or decision trees)
+
+(B) *Code quality:* Code formatting is consistent with Style Guide Appendix of DataComputing eBook. Specifically, all code chunks demonstrate proficiency with (1) meaningful object names (2) proper use of white spaces and new lines (3) use of meaningful comments.
+
+(C) *Narrative quality:* The narrative text--sentences and paragraphs--(1) clearly states one guiding question or research question for your investigation (2) explains why this topic is important and/or interesting to investigate (3) explains one or more significant findings or conclusions of your investigation that is clearly related to the guiding/research question
+
+(D) *Overall Quality:* (1) Submitted project shows significant effort to produce a high-quality and thoughtful analysis that contains interpretation of plots and other output  (2) The analysis is well-organized and easy to follow, and (3) Free of extraneous content - examples: do NOT output full data frames of >20 rows, any unrelated graphs, or other content with unclear purpose
+
+(E) *GitHub Repo:* (1) (1) At least 3 commits pushed to provided GitHub repo PER person (2) All commits must have an informative commit message that summarizes the contribution (3) Final project is entirely contained in the provided repo, including data sources, documents, and anything else that another analyst would need to reproduce your entire analysis (e.g. do NOT make any references to your personal desktop like C:\Users\Omar\STAT184)
+
+
 Research question: 
 How does the age in percent of population affect the voting patterns in the US?
 
@@ -66,8 +78,8 @@ head(voting)
 ```{r}
 newDem <-demographics %>%
   filter(!grepl(".", state_abbreviation, ignore.case = TRUE))
-updated <-select(newDem, c('area_name','PST045214','PST120214','AGE135214','AGE295214','AGE775214'))
-newDem
+updated <-select(newDem, c('area_name','PST045214','PST120214','AGE135214','AGE295214','AGE775214', 'fips'))
+updated
 ```
 
 
@@ -88,20 +100,6 @@ FinalTable2
 
 
 
-
-### attempt at doing mulitple bars per state 
-```{r}
-finalGraph <-
-  FinalTable2 %>%
-   ggplot(aes(x = usa_state, y = percent_democrat,fill = "" )) +
-         geom_col() + 
-         scale_fill_manual(breaks = c("Adults.19.25", "adults.26.34", "Adults.35.54", "Adults.55.64" ))
-
-```
-
-```{r}
-finalGraph
-```
 
 
 ```{r}
@@ -133,9 +131,8 @@ FinalTable2 %>%
 ```
 
 ```{r}
-plot_usmap(data = FinalTable2, values = "percent_democrat", color = "red") + 
+plot_usmap(data = FinalTable2, values = "percent_democrat", color = "black") + 
   scale_fill_continuous(name = "Percent of Democrats", label = scales::comma) + 
   theme(legend.position = "right")
-
 ```
 
