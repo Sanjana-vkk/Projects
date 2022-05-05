@@ -19,6 +19,10 @@ This data set shows the population distributions by age in the US states. It inc
 Research question: 
 How does the age in percent of population affect the voting patterns in the US?
 
+
+Explains why the topic is important: 
+Voter turnout is low in the United states when compared with other similar countries around the world. We want to investigate this turnout, specifically when looking at different age groups, to see if it provides any insight into why our turnout is so low. When looking at different age groups, we can see if efforts being done to improve the voting of those groups are effective. With this being done, it could give some ideas into our problems and help those trying to solve them. 
+
 Wrangling:
 See how percent of population (age) affects voting patterns
 Average out population percents in the demographic table (county averaged to represent state)
