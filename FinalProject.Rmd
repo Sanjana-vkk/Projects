@@ -5,7 +5,7 @@ date: "Due: 05/04/2022"
 output: html_notebook
 ---
 
-The three datasets are available in the repo
+The three data sets are available in the repo
 
 
 links to the data sets below: 
