@@ -96,8 +96,8 @@ Another join, last one
 
 ```{r}
 plot_usmap(data = voting, values = "percent_democrat", color = "black") + 
-  scale_fill_continuous(name = "Percent of Democrats", label = scales::comma) + 
-  theme(legend.position = "right")
+  scale_fill_continuous(name = "Percent of Democrats", label = scales::comma) + ggtitle("Democrats in the US States") +
+  theme(legend.position = "right") 
 ```
 Plot of U.S with percent of democrats for each state. Darker blue is less democratic. We use this as a baseline understanding of percentage of democrats in each state before looking at age breakdowns. 
 
@@ -140,7 +140,6 @@ FinalTable2 %>%
     labs (x = "") 
 ```
 These other graphs also follow the same trend as the first one of the ages having little effect on the political affiliation of the populations.
-
 
 From these graphs of different ages we saw that there was a fairly even spread out which shows us that for the U.S as a whole, this age range doesn't lean towards high or low amount of democrats. 
 
