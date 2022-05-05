@@ -25,26 +25,26 @@ output: html_notebook
 *Description: (1) Analysis includes at least two different data sources. (2) Primary data source may NOT be loaded from an R package--though supporting data may. (3) Access to all data sources is contained within the analysis. (4) Imported data is inspected at beginning of analysis using one or more R functions: e.g., str, glimpse, head, tail, names, nrow, etc*
 
 (A) .Rmd Line numbers where at least two different data sources are imported:  
-
+31 , 32 , 36
 
 (B) .Rmd Line numbers for inspecting data intake:  
-
+40 54 60 64 67
 
 ### Data Wrangling / Cleaning / etc (4 out of 7 required)
 
 
 (A) .Rmd Line number(s) for general data wrangling: 
 
-
+72-74 
 (B) .Rmd Line number(s) for a join operation: 
 
-
+81-84 92
 (C) .Rmd Line number(s) for a pivot_wider or pivot_longer operation (or equivalent):
 
 
 (D) .Rmd Line number(s) for use of regular expressions: 
 
-
+73
 (E) .Rmd Line number(s) for use of reduction and/or transformation functions: 
 
 
@@ -61,13 +61,13 @@ output: html_notebook
 
 
 (A) .Rmd Line numbers for use of multiple different geoms:  
-
+98 107
 (B) .Rmd Line number(s) for use of multiple aesthetics:  
-
+106 114 122 130 138
 (C) .Rmd Line number(s) for use of layered graphics:  
 
 (D) .Rmd Line number(s) for use of leaflet or choropleth maps:  
-
+98
 (E) .Rmd Line number(s) for use of decision tree or dendogram results:    
 
 
