@@ -1,0 +1,84 @@
+---
+title: "Street or Road"
+output: html_notebook
+name: Sanjana Kuchipudi
+date: '2022-04-12'
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+
+```{r}
+# Set Up
+
+library(tidyverse)
+library(dcData)
+```
+
+```{r}
+download.file(url="https://mdbeckman.github.io/dcSupplement/data/CMS_ProvidersSimple.rds",
+              destfile = "Your-Name-For-The-File.rds")
+DataTable <- readRDS("Your-Name-For-The-File.rds")
+```
+
+```{r}
+Addresses <- read_csv("https://mdbeckman.github.io/dcSupplement/data/street-addresses.csv")
+Sample <- 
+  Addresses %>%
+  sample_n(size = 50)
+```
+
+```{r}
+Matches <- 
+  Sample %>%
+  filter(grepl(pattern = "PO", address))
+Matches
+```
+
+```{r}
+Dont <- 
+  Sample %>%
+  filter( !grepl(pattern = "PO", address))
+Dont
+```
+
+```{r}
+pattern <- "BOX\\s+(\\d+)"
+
+Matches <- 
+  Sample %>% 
+  filter(grepl(pattern, address))
+
+Dont <-
+  Sample %>%
+  filter( !grepl(pattern, address))
+Dont
+```
+```{r}
+BoxNumbers <- 
+  Sample %>%
+  filter(grepl(pattern, address)) %>%
+  tidyr::extract(address, into = "boxnum", regex = pattern)
+BoxNumbers
+```
+```{r}
+pattern <- "(ST|RD|ROAD)"
+LeftOvers <-
+  Addresses %>% 
+  filter( !grepl(pattern, address),
+          !grepl("\\sAPT|UNIT\\s[\\d]+$", address),
+          !grepl(" BOX ", address)
+          )
+LeftOvers
+```
+The first line (pattern <- "(ST|RD|ROAD)") is the criteria that the address needs to contain. In this case it has to contain ST or RD or ROAD.
+(LeftOvers <-
+  Addresses %>%) this part is to create a new modified data table with the name leftovers.
+ filter( !grepl(pattern, address),
+          !grepl("\\sAPT|UNIT\\s[\\d]+$", address),
+          !grepl(" BOX ", address)
+This part is to only show the addresses that do not contain the st, rd or road and also to only show the addresses that do not have apt or unit with numbers.
+
+
